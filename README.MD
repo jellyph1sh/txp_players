@@ -16,4 +16,3 @@ Basic commands to manage players.
 - ***NEW** Teleport to target player command.*
 - ***NEW** Teleport target player to you command.*
 - ***NEW** If target teleportation player is in vehicle, teleport in his vehicle.*
-- ***NEW** Add suggestions for help.*
