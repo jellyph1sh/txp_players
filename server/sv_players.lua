@@ -1,4 +1,4 @@
-local function sendChatMessage(src, prefix, msg, choosenColor)
+local function SendChatMessage(src, prefix, msg, choosenColor)
     TriggerClientEvent("chat:addMessage", src, {
         args = {
             prefix,
@@ -23,13 +23,26 @@ local function TeleportPlayerToVehicle(player, targetVeh)
     return true
 end
 
+RegisterCommand("heal", function(src, args)
+    if #args == 0 then
+        SendChatMessage(src, "[ERROR]", "Missing arguments!", {255, 0, 0})
+    elseif #args > 1 then
+        SendChatMessage(src, "[ERROR]", "Too many arguments!", {255, 0, 0})
+    elseif GetPlayerPed(args[1]) == 0 then
+        SendChatMessage(src, "[ERROR]", "Invalid target id!", {255, 0, 0})
+    else
+        local targetId = args[1]
+        TriggerClientEvent("txp_players:heal", targetId)
+    end
+end, true)
+
 RegisterCommand("tp", function(src, args)
     if #args == 0 then
-        sendChatMessage(src, "[ERROR]", "Missing arguments!", {255, 0, 0})
+        SendChatMessage(src, "[ERROR]", "Missing arguments!", {255, 0, 0})
     elseif #args > 1 then
-        sendChatMessage(src, "[ERROR]", "Too many arguments!", {255, 0, 0})
+        SendChatMessage(src, "[ERROR]", "Too many arguments!", {255, 0, 0})
     elseif GetPlayerPed(args[1]) == 0 then
-        sendChatMessage(src, "[ERROR]", "Invalid target id!", {255, 0, 0})
+        SendChatMessage(src, "[ERROR]", "Invalid target id!", {255, 0, 0})
     else
         local targetId = args[1]
         local player = GetPlayerPed(src)
@@ -40,7 +53,7 @@ RegisterCommand("tp", function(src, args)
         else
             error = TeleportPlayerToVehicle(targetPlayer, playerVeh)
             if error then
-                sendChatMessage(src, "[ERROR]", "Problem during teleportation!", {255, 0, 0})
+                SendChatMessage(src, "[ERROR]", "Problem during teleportation!", {255, 0, 0})
             end
         end
     end
@@ -48,11 +61,11 @@ end, true)
 
 RegisterCommand("tpto", function(src, args)
     if #args == 0 then
-        sendChatMessage(src, "[ERROR]", "Missing arguments!", {255, 0, 0})
+        SendChatMessage(src, "[ERROR]", "Missing arguments!", {255, 0, 0})
     elseif #args > 1 then
-        sendChatMessage(src, "[ERROR]", "Too many arguments!", {255, 0, 0})
+        SendChatMessage(src, "[ERROR]", "Too many arguments!", {255, 0, 0})
     elseif GetPlayerPed(args[1]) == 0 then
-        sendChatMessage(src, "[ERROR]", "Invalid target id!", {255, 0, 0})
+        SendChatMessage(src, "[ERROR]", "Invalid target id!", {255, 0, 0})
     else
         local targetId = args[1]
         local player = GetPlayerPed(src)
@@ -63,7 +76,7 @@ RegisterCommand("tpto", function(src, args)
         else
             error = TeleportPlayerToVehicle(player, targetVeh)
             if error then
-                sendChatMessage(src, "[ERROR]", "Problem during teleportation!", {255, 0, 0})
+                SendChatMessage(src, "[ERROR]", "Problem during teleportation!", {255, 0, 0})
             end
         end
     end
