@@ -9,6 +9,7 @@ Basic commands to manage players.
 ## **HOW TO USE :**
 - *Command `/tpto <player_id>` to teleport to target player.*
 - *Command `/tp <player_id>` to teleport target player to you.*
+- *Command `/heal <player_id>` to heal target player.*
 
 ## **CHANGELOG :**
 
@@ -17,3 +18,6 @@ Basic commands to manage players.
 - ***NEW** Teleport target player to you command.*
 - ***NEW** If target teleportation player is in vehicle, teleport in his vehicle.*
 - ***NEW** Add suggestions for help.*
+
+### **1.1 :**
+- ***NEW** Heal player command.*
