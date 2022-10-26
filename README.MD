@@ -7,8 +7,9 @@ Basic commands to manage players.
 - *Anythings able to be config are in `shared/config.lua`*
 
 ## **HOW TO USE :**
-- *Command `/tpto <player_id>` to teleport to target player.*
 - *Command `/tp <player_id>` to teleport target player to you.*
+- *Command `/tpto <player_id>` to teleport to target player.*
+- *Command `/tpwp` to teleport to your waypoint.*
 - *Command `/heal <player_id>` to heal target player.*
 
 ## **CHANGELOG :**
