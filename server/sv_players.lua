@@ -34,7 +34,7 @@ RegisterCommand("heal", function(src, args)
         local targetId = args[1]
         TriggerClientEvent("txp_players:heal", targetId)
     end
-end, true)
+end, false)
 
 RegisterCommand("tp", function(src, args)
     if #args == 0 then
@@ -57,7 +57,7 @@ RegisterCommand("tp", function(src, args)
             end
         end
     end
-end, true)
+end, false)
 
 RegisterCommand("tpto", function(src, args)
     if #args == 0 then
@@ -80,4 +80,8 @@ RegisterCommand("tpto", function(src, args)
             end
         end
     end
-end, true)
+end, false)
+
+RegisterCommand("tpwp", function(src)
+    TriggerClientEvent("txp_players:teleportwaypoint", src)
+end, false)
