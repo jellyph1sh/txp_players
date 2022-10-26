@@ -38,3 +38,7 @@ AddEventHandler("txp_players:teleportwaypoint", function()
         })
     end
 end)
+
+TriggerEvent('chat:addSuggestion', '/tp', 'Teleport player at you.', {{name="server_id", help="Enter the server ID."}})
+TriggerEvent('chat:addSuggestion', '/tpto', 'Teleport you to player.', {{name="server_id", help="Enter the server ID."}})
+TriggerEvent('chat:addSuggestion', '/tpwp', 'Teleport you at your waypoint.', nil)
